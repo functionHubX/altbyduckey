@@ -39,7 +39,7 @@ if Testing == false then
 	TextLabel.Text = "Welcome, "..game.Players.LocalPlayer.Name
 	TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
 	TextLabel.TextScaled = false
-	TextLabel.TextSize = 19.000
+	TextLabel.TextSize = 20.000
 	TextLabel.TextWrapped = false
 	if not game:IsLoaded() then
 		repeat wait(.1) until game:IsLoaded() 
