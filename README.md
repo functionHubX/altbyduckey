@@ -253,6 +253,15 @@ local SetupsTable = {
         XMultiplier = 25,
         PerRow = 40,
         Rows = 60,
+        Bass = {
+        },
+        UFO = {
+            Origin = CFrame.new(68.6356506, 138.999954, -689.50708, -0.890650213, -1.19860246e-08, -0.454689085, -5.68871314e-08, 1, 8.50702406e-08, 0.454689085, 1.01633788e-07, -0.890650213),
+            ZMultiplier = 5,
+            XMultiplier = 25,
+            PerRow = 40,
+            Rows = 60,
+        },
     },
 }
 local function Setup(Type,Debugmode)
@@ -548,11 +557,13 @@ local function Initiate()
 				Setup("Train")
             elseif Message == ".setup bass" then
 				Setup("Bass")
+            elseif Message == ".setup ufo" then
+				Setup("UFO")
 			elseif Message == ".wallet on" then
 				ShowWallet()
 			elseif Message == ".wallet off" then
 				RemoveWallet()
-			elseif Message == ".dolphin" then
+			elseif Message == ".dance1" then
 				if CurrAnim and CurrAnim.IsPlaying then
 					CurrAnim:Stop()
 				end
@@ -561,7 +572,7 @@ local function Initiate()
 				CurrAnim = game.Players.LocalPlayer.Character.Humanoid.Animator:LoadAnimation(Anim)
 				CurrAnim:Play()
 				CurrAnim:AdjustSpeed()
-			elseif Message == ".monkey" then
+			elseif Message == ".dance2" then
 				if CurrAnim and CurrAnim.IsPlaying then
 					CurrAnim:Stop()
 				end
@@ -570,7 +581,7 @@ local function Initiate()
 				CurrAnim = game.Players.LocalPlayer.Character.Humanoid.Animator:LoadAnimation(Anim)
 				CurrAnim:Play()
 				CurrAnim:AdjustSpeed()
-			elseif Message == ".floss" then
+			elseif Message == ".dance3" then
 				if CurrAnim and CurrAnim.IsPlaying then
 					CurrAnim:Stop()
 				end
@@ -579,7 +590,7 @@ local function Initiate()
 				CurrAnim = game.Players.LocalPlayer.Character.Humanoid.Animator:LoadAnimation(Anim)
 				CurrAnim:Play()
 				CurrAnim:AdjustSpeed()
-			elseif Message == ".shuffle" then
+			elseif Message == ".dance4" then
 				if CurrAnim and CurrAnim.IsPlaying then
 					CurrAnim:Stop()
 				end
