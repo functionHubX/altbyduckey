@@ -107,7 +107,7 @@ local function AirLock(Type)
 			BP:Destroy()
 		end
 		CmdSettings["AirLock"] = true
-		Variables["Player"].Character.HumanoidRootPart.CFrame = Variables["Player"].Character.HumanoidRootPart.CFrame*CFrame.new(0,10,0)
+		Variables["Player"].Character.HumanoidRootPart.CFrame = Variables["Player"].Character.HumanoidRootPart.CFrame*CFrame.new(1,10,1)
 		local BP = Instance.new("BodyPosition",Variables["Player"].Character.HumanoidRootPart)
 		BP.Name = "AirLockBP"
 		BP.MaxForce = Vector3.new(math.huge,math.huge,math.huge)
@@ -255,7 +255,7 @@ local SetupsTable = {
         Rows = 2,
         Bass = {
         },
-        UFO = {
+        Up = {
             Origin = CFrame.new(68.6356506, 138.999954, -689.50708, -0.890650213, -1.19860246e-08, -0.454689085, -5.68871314e-08, 1, 8.50702406e-08, 0.454689085, 1.01633788e-07, -0.890650213),
             ZMultiplier = 2,
             XMultiplier = 2,
@@ -516,11 +516,7 @@ local function Initiate()
 				Drop(false)
 			elseif Args[1] == ".reset" then
 				if Variables["Player"].Character then
-					local FULLY_LOADED_CHAR = Variables["Player"].Character:FindFirstChild("FULLY_LOADED_CHAR")
-					if FULLY_LOADED_CHAR then
-						FULLY_LOADED_CHAR.Parent = Services["RP"]
-						FULLY_LOADED_CHAR:Destroy()
-					end
+					game.Players.LocalPlayer.Character.Humanoid.Health = 0
 					Variables["Player"].Character:Destroy()
 				end
 				Initiate()
@@ -557,8 +553,8 @@ local function Initiate()
 				Setup("Train")
             elseif Message == ".setup bass" then
 				Setup("Bass")
-            elseif Message == ".setup UFO" then
-				Setup("UFO")
+            elseif Message == ".setup up" then
+				Setup("Up")
 			elseif Message == ".wallet on" then
 				ShowWallet()
 			elseif Message == ".wallet off" then
