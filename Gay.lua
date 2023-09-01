@@ -262,7 +262,7 @@ local SetupsTable = {
 			XMultiplier = 25,
 			PerRow = 20,
 			Rows = 4,
-		},
+	}
 }
 local function Setup(Type,Debugmode)
 	CmdSettings["Aura"] = nil
@@ -563,7 +563,7 @@ local function Initiate()
 				ShowWallet()
 			elseif Message == ".wallet off" then
 				RemoveWallet()
-			elseif Message == ".dance1" then
+			elseif Message == ".dolphin" then
 				if CurrAnim and CurrAnim.IsPlaying then
 					CurrAnim:Stop()
 				end
@@ -572,7 +572,7 @@ local function Initiate()
 				CurrAnim = game.Players.LocalPlayer.Character.Humanoid.Animator:LoadAnimation(Anim)
 				CurrAnim:Play()
 				CurrAnim:AdjustSpeed()
-			elseif Message == ".dance2" then
+			elseif Message == ".monkey" then
 				if CurrAnim and CurrAnim.IsPlaying then
 					CurrAnim:Stop()
 				end
@@ -581,7 +581,7 @@ local function Initiate()
 				CurrAnim = game.Players.LocalPlayer.Character.Humanoid.Animator:LoadAnimation(Anim)
 				CurrAnim:Play()
 				CurrAnim:AdjustSpeed()
-			elseif Message == ".dance3" then
+			elseif Message == ".floss" then
 				if CurrAnim and CurrAnim.IsPlaying then
 					CurrAnim:Stop()
 				end
@@ -590,7 +590,7 @@ local function Initiate()
 				CurrAnim = game.Players.LocalPlayer.Character.Humanoid.Animator:LoadAnimation(Anim)
 				CurrAnim:Play()
 				CurrAnim:AdjustSpeed()
-			elseif Message == ".dance4" then
+			elseif Message == ".shuffle" then
 				if CurrAnim and CurrAnim.IsPlaying then
 					CurrAnim:Stop()
 				end
