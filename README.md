@@ -250,10 +250,10 @@ local SetupsTable = {
 	},
 	Bass = {
 		Origin = CFrame.new(-932.071106, 21.9998188, -482.336029, 0.999181449, 7.68011361e-08, -0.0404526889, -7.62968213e-08, 1, 1.40105483e-08, 0.0404526889, -1.09126681e-08, 0.999181449),
-		ZMultiplier = 5,
-		XMultiplier = -7,
+		ZMultiplier = 4,
+		XMultiplier = -6,
 		PerRow = 10,
-		Rows = 4,
+		Rows = 5,
 	}
 }
 local function Setup(Type,Debugmode)
