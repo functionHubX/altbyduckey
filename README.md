@@ -513,7 +513,13 @@ local function Initiate()
 			elseif Args[1] == ".stopdrop" then
 				Drop(false)
 			elseif Args[1] == ".reset" then
-					game.Players.LocalPlayer.Character.Humanoid.Health = 0
+				if Variables["Player"].Character then
+					local FULLY_LOADED_CHAR = Variables["Player"].Character:FindFirstChild("FULLY_LOADED_CHAR")
+					if FULLY_LOADED_CHAR then
+						FULLY_LOADED_CHAR.Parent = Services["RP"]
+						FULLY_LOADED_CHAR:Destroy()
+					end
+					Variables["Player"].Character:Destroy()
 				end
 				Initiate()
 			elseif Args[1] == ".airlock" then
