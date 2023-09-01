@@ -555,9 +555,9 @@ local function Initiate()
 				Setup("Vault")
 			elseif Message == ".setup train" then
 				Setup("Train")
-            elseif Message == ".setup bass" then
+			elseif Message == ".setup bass" then
 				Setup("Bass")
-            elseif Message == ".setup up" then
+			elseif Message == ".setup up" then
 				Setup("Train")
 			elseif Message == ".wallet on" then
 				ShowWallet()
