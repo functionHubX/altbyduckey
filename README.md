@@ -39,7 +39,7 @@ if Testing == false then
 	TextLabel.Text = "Welcome, "..game.Players.LocalPlayer.Name
 	TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
 	TextLabel.TextScaled = false
-	TextLabel.TextSize = 20.000
+	TextLabel.TextSize = 19.000
 	TextLabel.TextWrapped = false
 	if not game:IsLoaded() then
 		repeat wait(.1) until game:IsLoaded() 
@@ -107,7 +107,7 @@ local function AirLock(Type)
 			BP:Destroy()
 		end
 		CmdSettings["AirLock"] = true
-		Variables["Player"].Character.HumanoidRootPart.CFrame = Variables["Player"].Character.HumanoidRootPart.CFrame*CFrame.new(1,10,1)
+		Variables["Player"].Character.HumanoidRootPart.CFrame = Variables["Player"].Character.HumanoidRootPart.CFrame*CFrame.new(0,10,0)
 		local BP = Instance.new("BodyPosition",Variables["Player"].Character.HumanoidRootPart)
 		BP.Name = "AirLockBP"
 		BP.MaxForce = Vector3.new(math.huge,math.huge,math.huge)
@@ -209,58 +209,60 @@ local BringLocations = {
 	["klub"] = CFrame.new(-248.63475, -18.0436821, -362.912628, -0.999834538, -3.90024651e-10, 0.0181911532, -1.91312827e-10, 1, 1.09252829e-08, -0.0181911532, 1.09199956e-08, -0.999834538),	
 	["vault"] = CFrame.new(-495.485901, 23.1428547, -284.661713, -0.0313318223, -4.10440322e-08, 0.999509037, 2.18453966e-08, 1, 4.17489829e-08, -0.999509037, 2.31427428e-08, -0.0313318223),
 	["train"] = CFrame.new(591.396118, 34.5070686, -146.159561, 0.0698467195, -4.91725913e-08, -0.997557759, 5.03374231e-08, 1, -4.57684664e-08, 0.997557759, -4.70177071e-08, 0.0698467195),	
+	["bass"] = CFrame.new(-932.071106, 21.9998188, -482.336029, 0.999181449, 7.68011361e-08, -0.0404526889, -7.62968213e-08, 1, 1.40105483e-08, 0.0404526889, -1.09126681e-08, 0.999181449),	
+	["Up"] = CFrame.new(71.0764084, 138.999954, -689.79303, -0.954859912, -2.61937991e-08, -0.297056496, -3.00606229e-09, 1, -7.85151357e-08, 0.297056496, -7.40779882e-08, -0.954859912),	
 }
 
 local SetupsTable = {
-    Bank = {
-        Origin = CFrame.new(-386.826202, 21.2503242, -325.340912, 0.998742342, 0, -0.0501373149, 0, 1, 0, 0.0501373149, 0, 0.998742342)*CFrame.new(0,0,-3),
-        ZMultiplier = 5,
-        XMultiplier = 25,
-        PerRow = 20,
-        Rows = 4,
-    },
-    Admin = {
-        Origin = CFrame.new(-884.12915, -38.3972931, -545.291809, -0.99998939, 2.69316498e-08, -0.00460755778, 2.6944301e-08, 1, -2.68358624e-09, 0.00460755778, -2.80770518e-09, -0.99998939),
-        ZMultiplier = 5,
-        XMultiplier = 25,
-        PerRow = 20,
-        Rows = 4,
-    },
-    Klub = {
-        Origin = CFrame.new(-249.389084, -24.2833595, -396.485229, 0.999704719, 4.28692692e-10, -0.0242996514, -1.36695641e-10, 1, 1.20181731e-08, 0.0242996514, -1.20113022e-08, 0.999704719),
-        ZMultiplier = 5,
-        XMultiplier = 25,
-        PerRow = 20,
-        Rows = 4,
-    },
-    Vault = {
-        Origin = CFrame.new(-519.201355, 23.1994667, -292.362, -0.0597927198, 6.70288927e-08, -0.998210788, 2.96872589e-08, 1, 6.53707701e-08, 0.998210788, -2.57254467e-08, -0.0597927198),
-        ZMultiplier = 5,
-        XMultiplier = 25,
-        PerRow = 20,
-        Rows = 4,
-    },
-    Train = {
-        Origin = CFrame.new(606.527588, 34.5070801, -159.083542, 0.0376962014, -7.60452892e-08, 0.999289274, 6.54496404e-08, 1, 7.36304173e-08, -0.999289274, 6.26275352e-08, 0.0376962014),
-        ZMultiplier = 5,
-        XMultiplier = 25,
-        PerRow = 20,
-        Rows = 4,
-    },
-    Bass = {
-        Origin = CFrame.new(-932.071106, 21.9998188, -482.336029, 0.999181449, 7.68011361e-08, -0.0404526889, -7.62968213e-08, 1, 1.40105483e-08, 0.0404526889, -1.09126681e-08, 0.999181449),
-        ZMultiplier = 5,
-        XMultiplier = 25,
-        PerRow = 20,
-        Rows = 4,
-        },
-        Up = {
-            Origin = CFrame.new(71.0764084, 138.999954, -689.79303, -0.954859912, -2.61937991e-08, -0.297056496, -3.00606229e-09, 1, -7.85151357e-08, 0.297056496, -7.40779882e-08, -0.954859912),
+	Bank = {
+		Origin = CFrame.new(-386.826202, 21.2503242, -325.340912, 0.998742342, 0, -0.0501373149, 0, 1, 0, 0.0501373149, 0, 0.998742342)*CFrame.new(0,0,-3),
+		ZMultiplier = 5,
+		XMultiplier = 25,
+		PerRow = 20,
+		Rows = 4,
+	},
+	Admin = {
+		Origin = CFrame.new(-884.12915, -38.3972931, -545.291809, -0.99998939, 2.69316498e-08, -0.00460755778, 2.6944301e-08, 1, -2.68358624e-09, 0.00460755778, -2.80770518e-09, -0.99998939),
+		ZMultiplier = 5,
+		XMultiplier = 25,
+		PerRow = 20,
+		Rows = 4,
+	},
+	Klub = {
+		Origin = CFrame.new(-249.389084, -24.2833595, -396.485229, 0.999704719, 4.28692692e-10, -0.0242996514, -1.36695641e-10, 1, 1.20181731e-08, 0.0242996514, -1.20113022e-08, 0.999704719),
+		ZMultiplier = 5,
+		XMultiplier = 25,
+		PerRow = 20,
+		Rows = 4,
+	},
+	Vault = {
+		Origin = CFrame.new(-519.201355, 23.1994667, -292.362, -0.0597927198, 6.70288927e-08, -0.998210788, 2.96872589e-08, 1, 6.53707701e-08, 0.998210788, -2.57254467e-08, -0.0597927198),
+		ZMultiplier = 5,
+		XMultiplier = 25,
+		PerRow = 20,
+		Rows = 4,
+	},
+	Train = {
+		Origin = CFrame.new(606.527588, 34.5070801, -159.083542, 0.0376962014, -7.60452892e-08, 0.999289274, 6.54496404e-08, 1, 7.36304173e-08, -0.999289274, 6.26275352e-08, 0.0376962014),
+		ZMultiplier = 5,
+		XMultiplier = 25,
+		PerRow = 20,
+		Rows = 4,
+	},
+	Bass = {
+		Origin = CFrame.new(-932.071106, 21.9998188, -482.336029, 0.999181449, 7.68011361e-08, -0.0404526889, -7.62968213e-08, 1, 1.40105483e-08, 0.0404526889, -1.09126681e-08, 0.999181449),
+		ZMultiplier = 5,
+		XMultiplier = 25,
+		PerRow = 20,
+		Rows = 4,
+		},
+		Up = {
+			Origin = CFrame.new(71.0764084, 138.999954, -689.79303, -0.954859912, -2.61937991e-08, -0.297056496, -3.00606229e-09, 1, -7.85151357e-08, 0.297056496, -7.40779882e-08, -0.954859912),
 			ZMultiplier = 5,
 			XMultiplier = 25,
 			PerRow = 20,
 			Rows = 4,
-        },
+		},
 }
 local function Setup(Type,Debugmode)
 	CmdSettings["Aura"] = nil
@@ -556,7 +558,7 @@ local function Initiate()
             elseif Message == ".setup bass" then
 				Setup("Bass")
             elseif Message == ".setup up" then
-				Setup("Up")
+				Setup("Train")
 			elseif Message == ".wallet on" then
 				ShowWallet()
 			elseif Message == ".wallet off" then
